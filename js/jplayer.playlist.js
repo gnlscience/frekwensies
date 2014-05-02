@@ -239,12 +239,12 @@
 			var listItem = "<li><div>";
 
 			// Create remove control
-			listItem += "<a href='javascript:;' class='" + this.options.playlistOptions.removeItemClass + "'>&times;</a>";
+			//listItem += "<a href='javascript:;' class='" + this.options.playlistOptions.removeItemClass + "'>&times;</a>";
 
 			// Create links to free media
 			if(media.free) {
 				var first = true;
-				listItem += "<span class='" + this.options.playlistOptions.freeGroupClass + "'>(";
+				listItem += "<span class='" + this.options.playlistOptions.freeGroupClass + "'>";
 				$.each(media, function(property,value) {
 					if($.jPlayer.prototype.format[property]) { // Check property is a media format.
 						if(first) {
@@ -252,10 +252,10 @@
 						} else {
 							listItem += " | ";
 						}
-						listItem += "<a class='" + self.options.playlistOptions.freeItemClass + "' href='" + value + "' tabindex='1'>" + property + "</a>";
+						listItem += "<a class='" + self.options.playlistOptions.freeItemClass + "' href='" + value + "' tabindex='1'><img src='img/downarrow.png' style='width: 15px;'></a>";
 					}
 				});
-				listItem += ")</span>";
+				listItem += "</span>";
 			}
 
 			// The title is given next in the HTML otherwise the float:right on the free media corrupts in IE6/7
